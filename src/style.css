@@ -1,0 +1,53 @@
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+* {
+  box-sizing: border-box;
+}
+.burst {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  perspective: 600px;
+}
+.piece {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 5px;
+  height: 10px;
+  border-radius: 1px;
+  transform: translate(var(--x), var(--y)) rotate(var(--rotation));
+  animation: celebrate var(--duration) cubic-bezier(0.14, 0.55, 0.34, 1) both;
+  box-shadow: inset 1px 0 0 #fff3;
+}
+.still .piece {
+  animation: none;
+}
+@keyframes celebrate {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotateY(0);
+  }
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) rotateY(600deg)
+      rotate(var(--rotation));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .piece {
+    animation: none;
+  }
+}

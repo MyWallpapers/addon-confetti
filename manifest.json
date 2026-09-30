@@ -1,0 +1,49 @@
+{
+  "runtime": "canvas-v1",
+  "name": "Celebrate",
+  "description": "Une courte gerbe de confettis, déclenchée à l’apparition ou avec le bouton de réglage. Aucun effet permanent.",
+  "version": "0.1.0",
+  "entry": "dist/assets/addon.js",
+  "thumbnail": "assets/thumbnail.png",
+  "deviceSettingsVersion": "1",
+  "ui": {
+    "pointerEvents": "none"
+  },
+  "settings": [
+    {
+      "id": "count",
+      "type": "range",
+      "label": "Confettis",
+      "default": 48,
+      "min": 10,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "id": "duration",
+      "type": "range",
+      "label": "Durée (secondes)",
+      "default": 4,
+      "min": 1,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "id": "color",
+      "type": "color",
+      "label": "Couleur principale",
+      "default": "#c9b697"
+    },
+    {
+      "id": "secondary",
+      "type": "color",
+      "label": "Couleur secondaire",
+      "default": "#879d94"
+    },
+    {
+      "id": "celebrate",
+      "type": "button",
+      "buttonLabel": "Lancer les confettis"
+    }
+  ]
+}
